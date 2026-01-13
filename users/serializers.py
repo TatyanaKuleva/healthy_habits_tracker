@@ -6,7 +6,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ['id', 'email', 'password', 'phone_number', 'avatar', 'city']
+        fields = ['id', 'email', 'password', 'phone_number', 'avatar', 'city', 'tg_chat_id']
         read_only_fields = ['id']
 
     def create(self, validated_data):
