@@ -1,15 +1,27 @@
+from django.core.exceptions import ValidationError as DjangoValidationError
 from rest_framework import serializers
+
 from .models import Habit
 from .validators import validate_habit
-from django.core.exceptions import ValidationError as DjangoValidationError
+
 
 class HabitSerializer(serializers.ModelSerializer):
-    creator = serializers.ReadOnlyField(source='creator.email')
+    creator = serializers.ReadOnlyField(source="creator.email")
+
     class Meta:
         model = Habit
         fields = [
-            'id', 'creator', 'action', 'time', 'place', 'is_pleasant',
-            'linked_habit', 'periodicity', 'reward', 'time_to_complete', 'is_public'
+            "id",
+            "creator",
+            "action",
+            "time",
+            "place",
+            "is_pleasant",
+            "linked_habit",
+            "periodicity",
+            "reward",
+            "time_to_complete",
+            "is_public",
         ]
 
     def validate(self, data):

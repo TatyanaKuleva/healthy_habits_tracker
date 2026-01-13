@@ -1,7 +1,8 @@
-from rest_framework import viewsets, permissions
+from rest_framework import permissions, viewsets
 from rest_framework.generics import CreateAPIView
+
 from .models import User
-from .serializers import UserSerializer, RegisterSerializer
+from .serializers import RegisterSerializer, UserSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
