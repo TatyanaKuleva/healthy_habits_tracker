@@ -10,19 +10,30 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('tracker', '0001_initial'),
+        ("tracker", "0001_initial"),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='habit',
-            name='creator',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='habits', to=settings.AUTH_USER_MODEL),
+            model_name="habit",
+            name="creator",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="habits",
+                to=settings.AUTH_USER_MODEL,
+            ),
         ),
         migrations.AddField(
-            model_name='habit',
-            name='linked_habit',
-            field=models.ForeignKey(blank=True, help_text='Связанная приятная привычка, связана с полезной привычкой', null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='pleasant_habits', to='tracker.habit'),
+            model_name="habit",
+            name="linked_habit",
+            field=models.ForeignKey(
+                blank=True,
+                help_text="Связанная приятная привычка, связана с полезной привычкой",
+                null=True,
+                on_delete=django.db.models.deletion.SET_NULL,
+                related_name="pleasant_habits",
+                to="tracker.habit",
+            ),
         ),
     ]

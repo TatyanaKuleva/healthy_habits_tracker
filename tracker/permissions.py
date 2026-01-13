@@ -1,5 +1,6 @@
 from rest_framework import permissions
 
+
 class IsOwnerOrReadOnlyPublic(permissions.BasePermission):
     """
     Пользователь может делать полноценный CRUD только со своими привычками.
