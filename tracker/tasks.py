@@ -17,7 +17,7 @@ def send_habit_reminders():
     current_time = now_local.time()
     current_hour_minute = current_time.strftime("%H:%M")
 
-    logger.info(f"=== Запуск задачи send_habit_reminders ===")
+    logger.info("=== Запуск задачи send_habit_reminders ===")
     logger.info(f"UTC время: {now_utc.strftime('%Y-%m-%d %H:%M:%S %Z')}")
     logger.info(
         f"Локальное время (Europe/Moscow): {now_local.strftime('%Y-%m-%d %H:%M:%S %Z')}"
@@ -80,4 +80,4 @@ def send_habit_reminders():
                 f"Время не совпало для привычки ID={habit.id}: {habit_hour_minute} != {current_hour_minute}"
             )
 
-    logger.info(f"=== Завершение задачи send_habit_reminders ===")
+    logger.info("=== Завершение задачи send_habit_reminders ===")

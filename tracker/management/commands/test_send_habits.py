@@ -132,14 +132,14 @@ class Command(BaseCommand):
                 continue
 
             # Отправляем сообщение
-            message = f"Напоминание: пора выполнять привычку '{habit.action}'!"
-            self.stdout.write(f"Отправка сообщения в Telegram...")
+            message = "Напоминание: пора выполнять привычку !"
+            self.stdout.write(f"Отправка сообщения в Telegram {message}")
             self.stdout.write(f"Chat ID: {chat_id}")
             self.stdout.write(f"Сообщение: {message}")
 
             try:
                 send_telegram_message(chat_id, message)
-                self.stdout.write(self.style.SUCCESS(f"Сообщение успешно отправлено!"))
+                self.stdout.write(self.style.SUCCESS("Сообщение успешно отправлено"))
                 sent_count += 1
             except Exception as e:
                 self.stdout.write(self.style.ERROR(f"Ошибка при отправке: {e}"))
