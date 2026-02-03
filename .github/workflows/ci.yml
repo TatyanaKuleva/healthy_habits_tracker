@@ -73,8 +73,7 @@ jobs:
           poetry install --no-interaction
 
       - name: Run tests
-        run: |
-          poetry run pytest
+        run: poetry run python manage.py test
 
 
 
